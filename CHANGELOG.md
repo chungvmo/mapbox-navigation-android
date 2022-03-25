@@ -33,6 +33,7 @@ This release depends on, and has been tested with, the following Mapbox dependen
 - Mapbox Java `v6.4.0-beta.3` ([release notes](https://github.com/mapbox/mapbox-java/releases/tag/v6.4.0-beta.3))
 - Mapbox Android Core `v5.0.1`
 - Mapbox Android Telemetry `v8.1.1`
+- Refactored `NavigationCamera` to not set itself to idle properties if it cancels an active transition. [#5607](https://github.com/mapbox/mapbox-navigation-android/pull/5607)
 
 ## Mapbox Navigation SDK 2.4.0-beta.2 - March 18, 2022
 ### Changelog

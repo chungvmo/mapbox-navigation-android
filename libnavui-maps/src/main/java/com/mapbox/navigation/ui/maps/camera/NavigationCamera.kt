@@ -163,7 +163,7 @@ class NavigationCamera(
 
     /**
      * Executes a transition to [FOLLOWING] state. When started, goes to [TRANSITION_TO_FOLLOWING]
-     * and to the final [FOLLOWING] when ended. If transition is canceled, state goes to [IDLE].
+     * and to the final [FOLLOWING] when ended.
      *
      * The target camera position is obtained with [ViewportDataSource.getViewportData].
      *
@@ -189,7 +189,7 @@ class NavigationCamera(
 
     /**
      * Executes a transition to [FOLLOWING] state. When started, goes to [TRANSITION_TO_FOLLOWING]
-     * and to the final [FOLLOWING] when ended. If transition is canceled, state goes to [IDLE].
+     * and to the final [FOLLOWING] when ended.
      *
      * The target camera position is obtained with [ViewportDataSource.getViewportData].
      *
@@ -239,7 +239,7 @@ class NavigationCamera(
 
     /**
      * Executes a transition to [OVERVIEW] state. When started, goes to [TRANSITION_TO_OVERVIEW]
-     * and to the final [OVERVIEW] when ended. If transition is canceled, state goes to [IDLE].
+     * and to the final [OVERVIEW] when ended.
      *
      * The target camera position is obtained with [ViewportDataSource.getViewportData].
      *
@@ -265,7 +265,7 @@ class NavigationCamera(
 
     /**
      * Executes a transition to [OVERVIEW] state. When started, goes to [TRANSITION_TO_OVERVIEW]
-     * and to the final [OVERVIEW] when ended. If transition is canceled, state goes to [IDLE].
+     * and to the final [OVERVIEW] when ended.
      *
      * The target camera position is obtained with [ViewportDataSource.getViewportData].
      *
@@ -443,9 +443,7 @@ class NavigationCamera(
         }
 
         override fun onAnimationEnd(animation: Animator?) {
-            if (isCanceled) {
-                setIdleProperties()
-            } else {
+            if (!isCanceled) {
                 this@NavigationCamera.frameTransitionOptions = frameTransitionOptions
                 state = finalState
             }
